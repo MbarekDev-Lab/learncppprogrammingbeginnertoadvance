@@ -16,6 +16,8 @@ int main() {
 
 		int* p = &a;
 		int*& ref = p;  // ref is a reference to the pointer p
+		cout << ref << endl;
+
 
 		cout << *p << endl;   // Output: 10
 		ref = &b;             // changes p to point to b
