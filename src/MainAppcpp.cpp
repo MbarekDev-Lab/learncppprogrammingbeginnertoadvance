@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -11,7 +12,51 @@ int main() {
 	if (true) {
 		std::cout << "Active code" << std::endl;
 		
-		int a = 10;
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*// Declare an array of size 10
+
+		char* s = new char[100] {};  // Zero-initialize to be safe
+		cout << "Enter a string: ";
+		cin >> s;  // Input string
+
+		cout << "You entered: " << s << endl;
+
+		char s1[20] = "morning";
+
+		strncat(s, s1, 3);  // Append first 3 letters of s1 to s
+
+		cout << "After strncat: " << s << endl;
+
+		delete[] s;  // Always free heap memory!
+
+		char s[100];
+		std::cout << "Enter a string: ";
+		//cin >> s;// Read a string from the user
+
+		cin.get(s, 100); // Clear the newline character from the input buffer
+		cout << "welcom" << s << endl;
+
+
+		cin.getline(s,100);
+
+		std::cout << "You entered: " << s << std::endl;
+
+		char s[] = {'M','B','C','\0'};
+		cout << s << endl;
+
+		const char* sptr = "hello";
+
+		sptr = "world"; // This is allowed because sptr is a pointer to a string literal
+		//sptr[0] = 'H'; // This is not allowed because string literals are immutable
+
+
+		cout << sptr << endl;
+
+			int a = 10;
 		int b = 20;
 
 		int* p = &a;
@@ -22,13 +67,6 @@ int main() {
 		cout << *p << endl;   // Output: 10
 		ref = &b;             // changes p to point to b
 		cout << *p << endl;   // Output: 20
-
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*// Declare an array of size 10
 
 
 		int A[] = { 2,4,6,8,10,12 };
