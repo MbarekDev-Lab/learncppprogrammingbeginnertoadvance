@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cstring>
+#include <iostream>
+#include <cstring>
 
 using namespace std;
 
@@ -9,15 +11,69 @@ int main() {
     std::cout << "begining of the MainApp." << std::endl;
 
 
-	if (true) {
+    if (true) {
 		std::cout << "Active code" << std::endl;
-		
+
+
+		string str = " mbaretk ";
+		char str1[20] = {};  // Initialize to zero (safe)
+
+		str.copy(str1, str.length());  // Copies the characters (but no null terminator!)
+		str1[str.length()] = '\0';     // Manually add null terminator
+
+		cout << "str1 : " << str1 << endl;
+	
 
 		std::cout << "\nend of the MainApp." << std::endl;
 	}
 	else {
 		std::cout << "Inactive" << std::endl;
-		/*// Declare an array of size 10
+		/*	
+		string str = "hello";
+
+		str.replace(0,2,"ben");
+		cout << "str : " << str << endl;
+
+		str.append(" world");
+		str += "!";
+		cout << "str : " << str << endl;
+
+
+		//string.insert(position, source_string, number_of_characters);
+		str.insert(3, "  mbarek ",3 ); // Insert at the beginning
+		cout << "str : " << str << endl;
+
+		string str = "nullptr";
+		str += "hello";
+		str.clear();
+		if (str.empty()) {
+			cout << "string is empty" << endl;
+		}
+		else {
+			cout << "string is not empty" << endl;
+		}
+
+		cout << str<< endl;
+		
+		
+		string str;
+		cout << "Enter a string: ";
+		cin >> str;              // Reads until the first space
+
+		cin.ignore();            // Clear the leftover '\n'
+
+		getline(cin, str);       // Now reads the rest of the line
+		cout << "You entered: " << str << endl;
+		
+		// Declare an array of size 10
+
+	// Example of using strtok_s with a string literal
+		char s1[20] = "20";
+		char s2[20] = "30";
+
+		long x = strtol(s1,NULL,10);
+		float y = strtof(s2, NULL);
+		cout << "x : " << x << y<< std::endl;
 
 		char* s = new char[100] {};  // Zero-initialize to be safe
 		cout << "Enter a string: ";
