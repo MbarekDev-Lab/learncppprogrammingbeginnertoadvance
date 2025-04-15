@@ -13,15 +13,24 @@ int main() {
 
     if (true) {
 		std::cout << "Active code" << std::endl;
+		string s = "Hello";
 
+		cout << "Length: " << s.length() << endl;
+		cout << "Is Empty: " << s.empty() << endl;
+		s.append(" World");
+		cout << "Appended: " << s << endl;
+		cout << "Substring: " << s.substr(0, 5) << endl;
 
-		string str = " mbaretk ";
-		char str1[20] = {};  // Initialize to zero (safe)
+		size_t pos = s.find("World");
+		if (pos != string::npos) {
+			cout << "'World' found at: " << pos << endl;
+		}
 
-		str.copy(str1, str.length());  // Copies the characters (but no null terminator!)
-		str1[str.length()] = '\0';     // Manually add null terminator
+		s.replace(6, 5, "C++");
+		cout << "After Replace: " << s << endl;
 
-		cout << "str1 : " << str1 << endl;
+		cout << "  " << s.c_str() << endl;
+
 	
 
 		std::cout << "\nend of the MainApp." << std::endl;
@@ -29,6 +38,14 @@ int main() {
 	else {
 		std::cout << "Inactive" << std::endl;
 		/*	
+		* 
+		string str = " mbaretk ";
+		char str1[20] = {};  // Initialize to zero (safe)
+
+		str.copy(str1, str.length());  // Copies the characters (but no null terminator!)
+		str1[str.length()] = '\0';     // Manually add null terminator
+
+		cout << "str1 : " << str1 << endl;
 		string str = "hello";
 
 		str.replace(0,2,"ben");
