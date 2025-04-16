@@ -15,9 +15,42 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
+		string s1 = "WELCOME";
+		int count = 0;
+
+
+		string::iterator it;
+
+//		for (it = s1.begin(); it != s1.end(); it++) {
+
+		for ( it = s1.begin(); it != s1.end(); it++) {
+			count++;
+		}
+		cout << "length is : " << count << std::endl;
+
+		for (int i= 0;i<  s1.length(); i++) {
+			count++;
+		}
+
+
+		for (int i = 0;  s1[i] != '\0'; i++) {
+			count++;
+		}
+
+
+
+		cout << "length is : " << count << std::endl;
+
+
 	
-
-
+	
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*	
+		* 
 		string s1 = "hello";
 		string s2 = "HELLO";
 
@@ -28,14 +61,8 @@ int main() {
 		if (s1.compare(s2) == 0) {
 			cout << "Strings are equal (ignoring case)" << endl;
 		}
-	
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*	
-		* 
+
+
 		string str = "Hello";
 		string str2 = "World";
 		cout << "str1 : " << str.compare(str2) << endl;
