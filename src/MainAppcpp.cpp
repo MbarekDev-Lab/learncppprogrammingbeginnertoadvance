@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include <iostream>
+#include <algorithm>
 #include <cstring>
 
 using namespace std;
@@ -13,32 +14,62 @@ int main() {
 
     if (true) {
 		std::cout << "Active code" << std::endl;
-		string s = "Hello";
 
-		cout << "Length: " << s.length() << endl;
-		cout << "Is Empty: " << s.empty() << endl;
-		s.append(" World");
-		cout << "Appended: " << s << endl;
-		cout << "Substring: " << s.substr(0, 5) << endl;
 
-		size_t pos = s.find("World");
-		if (pos != string::npos) {
-			cout << "'World' found at: " << pos << endl;
+		string s1 = "hello";
+		string s2 = "HELLO";
+
+		transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
+		transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
+
+		if (s1.compare(s2) == 0) {
+			cout << "Strings are equal (ignoring case)" << endl;
 		}
-
-		s.replace(6, 5, "C++");
-		cout << "After Replace: " << s << endl;
-
-		cout << "  " << s.c_str() << endl;
-
 	
-
+		
 		std::cout << "\nend of the MainApp." << std::endl;
 	}
 	else {
 		std::cout << "Inactive" << std::endl;
 		/*	
 		* 
+		string str = "Hello";
+		string str2 = "World";
+		cout << "str1 : " << str.compare(str2) << endl;
+
+		cout << "str : " << str.substr(1, 6) << endl;
+
+		cout << "str1 : " << str.find_last_not_of(" ") << endl;
+		cout << "str1 : " << str.find_last_of("m ") << endl;
+
+		string str = "HelloWorld";
+		string str2 = "World";
+
+		int result = str.compare(5, 5, str2);
+
+
+
+		char str1[20] = {};  // Initialize to zero (safe)
+
+		str.copy(str1, str.length());  // Copies the characters (but no null terminator!)
+		str1[str.length()] = '\0';     // Manually add null terminator
+
+		cout << "str1 : " << str1 << endl;
+		string s = "Hello";
+		cout << s.capacity() <<" "<<s.length() << endl;
+		cout << "Length: " << s.length() << endl;
+		cout << "Is Empty: " << s.empty() << endl;
+		s.append(" World");
+		cout << "Appended: " << s << endl;
+		cout << "Substring: " << s.substr(0, 5) << endl;
+		size_t pos = s.find("World");
+		if (pos != string::npos) {
+			cout << "'World' found at: " << pos << endl;
+		}
+		s.replace(6, 5, "C++");
+		cout << "After Replace: " << s << endl;
+		cout << "  " << s.c_str() << endl;
+
 		string str = " mbaretk ";
 		char str1[20] = {};  // Initialize to zero (safe)
 
