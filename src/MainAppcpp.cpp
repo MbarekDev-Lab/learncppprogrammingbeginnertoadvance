@@ -16,19 +16,38 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
-		string str = "helloWorld";
-		string::iterator it;
-		for (it = str.begin(); it != str.end(); ++it) {
-			*it = *it - 32;
+		// Example of using strtok_s with a string literal
+		string str = "how are you 123";
+		int vowels = 0, consonants = 0, digits = 0, spaces = 0;
 
-			/*
-			if (*it == 'o') {
-				str.erase(it);
-				it--; // Decrement iterator to stay at the same position
+		// Loop through each character in the string
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str[i];
+
+			// Check if the character is a vowel (uppercase or lowercase)
+			if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' ||
+				ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+				vowels++;
 			}
-			*/
+			// Check if the character is a space
+			else if (ch == ' ') {
+				spaces++;
+			}
+			// Check if the character is a digit
+			else if (ch >= '0' && ch <= '9') {
+				digits++;
+			}
+			// Otherwise, it must be a consonant
+			else if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+				consonants++;
+			}
 		}
-		cout << "str : " << str << endl;
+
+		// Output the results
+		cout << "Vowels: " << vowels << endl;
+		cout << "Consonants: " << consonants << endl;
+		cout << "Digits: " << digits << endl;
+		cout << "Spaces: " << spaces << endl;
 
 
 		
@@ -38,6 +57,16 @@ int main() {
 		std::cout << "Inactive" << std::endl;
 		/*	
 		
+		string str = "helloWorld";
+		string::iterator it;
+		for (it = str.begin(); it != str.end(); ++it) {
+			*it = *it - 32;
+			if (*it == 'o') {
+				str.erase(it);
+				it--; // Decrement iterator to stay at the same position
+			}	
+		}
+		cout << "str : " << str << endl;
 		string str = "WeLcOmE7";
 		string result = "";
 
