@@ -16,8 +16,36 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
-		// Example of using strtok_s with a string literal
-		string str = "how are you 123";
+		string str = "MADAM";
+		string rev = "";
+
+		int len = (int)str.length();
+		for (int i = 0, j = len - 1; i < len;i++,j--) {
+			rev[i] = str[j];
+		}
+
+		rev[len] = '\0';
+		cout << "rev : " << rev << endl;
+		if (str.compare(rev) == 0) {
+			cout << "palindrome" << endl;
+		}
+		else {
+			cout << "not palindrome" << endl;
+		}
+
+
+
+
+		
+
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*	
+		//count vowels, consonants, spaces, and digits in the given string
+		string str = "how      are you7 123";
 		int vowels = 0, consonants = 0, digits = 0, spaces = 0;
 
 		// Loop through each character in the string
@@ -50,13 +78,6 @@ int main() {
 		cout << "Spaces: " << spaces << endl;
 
 
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*	
-		
 		string str = "helloWorld";
 		string::iterator it;
 		for (it = str.begin(); it != str.end(); ++it) {
