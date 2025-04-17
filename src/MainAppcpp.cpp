@@ -16,6 +16,25 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
+		string email = "mbarek@gmail.com";
+		int index = email.find("@");  // Find the position of '@'
+
+		string userName = email.substr(0, index);      // Extract part before '@'
+		string domain = email.substr(index + 1);      // Extract part after '@'
+
+		cout << "userName : " << userName << endl;     // Output: mbarek
+		cout << "domain   : " << domain << endl;       // Output: gmail.com
+
+
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*	
+		
+		
+		
 		string str = "MADAM";
 		string rev = "";
 
@@ -32,18 +51,8 @@ int main() {
 		else {
 			cout << "not palindrome" << endl;
 		}
-
-
-
-
 		
-
 		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*	
 		//count vowels, consonants, spaces, and digits in the given string
 		string str = "how      are you7 123";
 		int vowels = 0, consonants = 0, digits = 0, spaces = 0;
