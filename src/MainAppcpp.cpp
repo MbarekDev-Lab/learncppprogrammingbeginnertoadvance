@@ -2,6 +2,7 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
+#include <vector>
 #include <cstring>
 
 using namespace std;
@@ -15,13 +16,52 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
+
+		string str = "WeLcOmE7";
+
+		for (int i = 0; str[i] != '\0';i++) {
+
+			if (str[i] >= 65 && str[i]<= 90) {
+				str[i] = str[i] + 32;
+			}
+		}
+		cout << "str : " << str << endl;
+
+
+
+
+
+
+
+
+		
+	
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*	
+		vector<int> v = { 10, 20, 30, 40 };
+
+		// Declare iterator
+		vector<int>::iterator it;
+
+		// Loop using iterator
+		for (it = v.begin(); it != v.end(); it++) {
+			cout << *it << " ";  // Dereference to access value
+		}
+
+
 		string s1 = "WELCOME";
 		int count = 0;
 
-
 		string::iterator it;
 
-//		for (it = s1.begin(); it != s1.end(); it++) {
+		for (auto it = s1.begin(); it != s1.end(); ++it) {
+			count++;
+		}
+		cout << "length is : " << count << std::endl;
 
 		for ( it = s1.begin(); it != s1.end(); it++) {
 			count++;
@@ -32,25 +72,12 @@ int main() {
 			count++;
 		}
 
-
 		for (int i = 0;  s1[i] != '\0'; i++) {
 			count++;
 		}
 
-
-
 		cout << "length is : " << count << std::endl;
 
-
-	
-	
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*	
-		* 
 		string s1 = "hello";
 		string s2 = "HELLO";
 
@@ -61,7 +88,6 @@ int main() {
 		if (s1.compare(s2) == 0) {
 			cout << "Strings are equal (ignoring case)" << endl;
 		}
-
 
 		string str = "Hello";
 		string str2 = "World";
