@@ -16,25 +16,19 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
-
 		string str = "WeLcOmE7";
+		string result = "";
 
 		for (int i = 0; str[i] != '\0'; i++) {
-			if (str[i] >= 97; && str[i] <= 122) {  // Check if character is uppercase A-Z
-				str[i] -= 32;           // Convert to lowercase by adding 32
+			if (str[i] >= 'A' && str[i] <= 'Z') {
+				result += (str[i] + 32);  // Convert uppercase to lowercase
+			}
+			else if (str[i] >= 'a' && str[i] <= 'z') {
+				result += str[i];         // Keep lowercase as is
 			}
 		}
-		cout << "str : " << str << endl
 
-
-
-
-
-
-
-
-		
-	
+		cout << "str : " << result << endl;  
 		
 		std::cout << "\nend of the MainApp." << std::endl;
 	}
