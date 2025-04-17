@@ -16,6 +16,28 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
+		string str = "helloWorld";
+		string::iterator it;
+		for (it = str.begin(); it != str.end(); ++it) {
+			*it = *it - 32;
+
+			/*
+			if (*it == 'o') {
+				str.erase(it);
+				it--; // Decrement iterator to stay at the same position
+			}
+			*/
+		}
+		cout << "str : " << str << endl;
+
+
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*	
+		
 		string str = "WeLcOmE7";
 		string result = "";
 
@@ -28,13 +50,8 @@ int main() {
 			}
 		}
 
-		cout << "str : " << result << endl;  
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*	
+		cout << "str : " << result << endl;
+
 		vector<int> v = { 10, 20, 30, 40 };
 
 		// Declare iterator
