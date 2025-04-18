@@ -74,28 +74,55 @@ auto Min(T1 a, T2 b, T3 c) -> typename std::common_type<T1, T2, T3>::type {
 			static_cast<typename std::common_type<T1, T2, T3>::type>(a),
 				static_cast<typename std::common_type<T1, T2, T3>::type>(b),
 				static_cast<typename std::common_type<T1, T2, T3>::type>(c)
-		}.end()
-				);
+		}.end());
 }
 
 
 
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
-
-
-    if (true) {
+	if (true) {
 		std::cout << "Active code" << std::endl;
 
-		cout << "Min of (10, 5.5, 3.5): " << Min(10, 5.5, 3.5) << endl; // Mixed types
-		cout << "Min of (12.5, 8.7, 3.2): " << Min(12.5, 8.7, 3.2) << endl; // All floats
-		cout << "Min of (20, 15.5, 10.7): " << Min(20, 15.5, 10.7) << endl; // Mixed types
+		int x = 10, y;
+		y = ++x;   // Pre-increment
+		cout << y; // Output: 10
+		cout << x<<endl; // Output: 10
+
+		cout << (char)97 << endl;  // Output: a
+
+		int a = 25;
+		cout << (~a); // Output: -26
+
+
+		 int a,b,c;
+
+    cout << "Enter 3 no.s" << endl;
+    cin>>a>>b>>c;
+        
+    if(a>b && a>c)
+    {
+        cout<<a<<endl;
+    }
+    else if(b>c)
+    {
+        cout<<b<<endl;
+    }
+    else
+    {
+        cout<<c<<endl;
+    }
+
+
+		//cout << "Min of (10, 5.5, 3.5): " << Min(10, 5.5, 3.5) << endl; // Mixed types
+		//cout << "Min of (12.5, 8.7, 3.2): " << Min(12.5, 8.7, 3.2) << endl; // All floats
+		//cout << "Min of (20, 15.5, 10.7): " << Min(20, 15.5, 10.7) << endl; // Mixed types
+		
 		std::cout << "\nend of the MainApp." << std::endl;
 	}
 	else {
-		std::cout << "Inactive" << std::endl;
+		//std::cout << "Inactive" << std::endl;
 		/*	
-		
 		// 1. Min() function for 2 TEMPLATE types
 		template<typename  T>  // or template<class T>
 		T Min(T a , T b) {
