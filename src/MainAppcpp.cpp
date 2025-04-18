@@ -45,6 +45,22 @@ int pow(int x, int y) {
 }
 
 
+// 1. Min() function for 2 integers
+int Min(int a, int b) {
+	return (a < b) ? a : b;
+}
+
+// 2. Min() function for 3 integers
+int Min(int a, int b, int c) {
+	return Min(Min(a, b), c);  // reuse the 2-arg Min
+}
+
+// 3. Min() function for 2 floats
+float Min(float a, float b) {
+	return (a < b) ? a : b;
+}
+
+
 
 
 int main() {
