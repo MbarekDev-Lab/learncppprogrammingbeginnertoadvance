@@ -1,9 +1,8 @@
 #include <iostream>
 #include <cstring>
-#include <iostream>
 #include <algorithm>
+#include <type_traits>
 #include <vector>
-#include <cstring>
 
 using namespace std;
 
@@ -45,17 +44,41 @@ int pow(int x, int y) {
 }
 
 
-// 1. Min() function for 2 TEMPLATE types
-template<typename  T>  // or template<class T>
-T Min(T a , T b) {
-	return (a < b) ? a : b;
+// Template function for Min
+template<typename T1, typename T2, typename T3>
+auto Min1(T1 a, T2 b, T3 c) -> typename std::common_type<T1, T2, T3>::type {
+	// Use std::min with a common type
+	return std::min({ a, b, c });
 }
 
-// 2. Min() function for 3 integers
- template<typename T>
-T Min(T a, T b, T c) {
-	return Min(Min(a, b), c);  // reuse the 2-arg Min
+
+// Template function for Min
+template<typename T1, typename T2, typename T3>
+auto Min2(T1 a, T2 b, T3 c) -> typename std::common_type<T1, T2, T3>::type {
+	// Use std::min_element with an initializer list
+	return *std::min_element(std::initializer_list<typename std::common_type<T1, T2, T3>::type>{a, b, c}.begin(),
+		std::initializer_list<typename std::common_type<T1, T2, T3>::type>{a, b, c}.end());
 }
+
+// Template function for Min
+template<typename T1, typename T2, typename T3>
+auto Min(T1 a, T2 b, T3 c) -> typename std::common_type<T1, T2, T3>::type {
+	// Use std::min_element with an initializer list
+	return *std::min_element(
+		std::initializer_list<typename std::common_type<T1, T2, T3>::type>{
+		static_cast<typename std::common_type<T1, T2, T3>::type>(a),
+			static_cast<typename std::common_type<T1, T2, T3>::type>(b),
+			static_cast<typename std::common_type<T1, T2, T3>::type>(c)
+	}.begin(),
+			std::initializer_list<typename std::common_type<T1, T2, T3>::type>{
+			static_cast<typename std::common_type<T1, T2, T3>::type>(a),
+				static_cast<typename std::common_type<T1, T2, T3>::type>(b),
+				static_cast<typename std::common_type<T1, T2, T3>::type>(c)
+		}.end()
+				);
+}
+
+
 
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
@@ -63,15 +86,36 @@ int main() {
 
     if (true) {
 		std::cout << "Active code" << std::endl;
-	
-		cout << "Min of (10, 5): " << Min(10, 5) << endl;
-		cout << "Min of (12, 7, 9): " << Min(12, 7, 9) << endl;
-		cout << "Min of (18.0f, 9.0f): " << Min(1.5f ,18.5f, 9.9f) << endl;
 
-		//find theb pow 
-		cout << pow(2, 5);
+		cout << "Min of (10, 5.5, 3.5): " << Min(10, 5.5, 3.5) << endl; // Mixed types
+		cout << "Min of (12.5, 8.7, 3.2): " << Min(12.5, 8.7, 3.2) << endl; // All floats
+		cout << "Min of (20, 15.5, 10.7): " << Min(20, 15.5, 10.7) << endl; // Mixed types
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+		std::cout << "Inactive" << std::endl;
+		/*	
 		
-		// find max 
+		// 1. Min() function for 2 TEMPLATE types
+		template<typename  T>  // or template<class T>
+		T Min(T a , T b) {
+			return (a < b) ? a : b;
+		}
+
+		// 2. Min() function for 3 integers
+		 template<typename T>
+		T Min(T a, T b, T c) {
+			return Min(Min(a, b), c);  // reuse the 2-arg Min
+		}
+		
+				cout << "Min of (10, 5): " << Min(10, 5) << endl;
+		cout << "Min of (12, 7, 9): " << Min(12, 7, 9) << endl;
+		cout << "Min of (18.0f, 9.0f): " << Min(1.5f ,18.5f, 9.9) << endl;
+
+		//find theb pow
+		cout << pow(2, 5);
+
+		// find max
 		int a = 10;
 		int b = 20;
 		int c = 30;
@@ -79,11 +123,6 @@ int main() {
 		cout << "max : " << max << std::endl;
 		// Example of using a function to add two numbers
 
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		std::cout << "Inactive" << std::endl;
-		/*	
 		string email = "mbarek@gmail.com";
 		int index = email.find("@");  // Find the position of '@'
 
