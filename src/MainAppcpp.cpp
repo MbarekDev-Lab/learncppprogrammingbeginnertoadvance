@@ -7,6 +7,44 @@
 
 using namespace std;
 
+void printArray(const int* arr, int size) {
+	for (int i = 0; i < size; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}
+
+
+
+float add(float x, float y) {
+	return x+y;
+}
+
+
+int findMax(int a , int b, int c) {
+	if (a>b && a>c) {
+		return a;
+	}
+	else if (b > c) {
+		return b;
+	}
+	else {
+		return c;
+	}
+}
+
+int pow(int x, int y) {
+
+	int r = 1;
+	for (int i = 0; i < y; i++) {
+		r = r * x;
+		cout << r << endl;
+
+	}
+	return r;
+}
+
+
 
 
 int main() {
@@ -16,14 +54,17 @@ int main() {
     if (true) {
 		std::cout << "Active code" << std::endl;
 
-		string email = "mbarek@gmail.com";
-		int index = email.find("@");  // Find the position of '@'
+		//find theb pow 
+		cout << pow(2, 5);
+		
+		// find max 
+		int a = 10;
+		int b = 20;
+		int c = 30;
+		int max = findMax(a, b, c);
+		cout << "max : " << max << std::endl;
+		// Example of using a function to add two numbers
 
-		string userName = email.substr(0, index);      // Extract part before '@'
-		string domain = email.substr(index + 1);      // Extract part after '@'
-
-		cout << "userName : " << userName << endl;     // Output: mbarek
-		cout << "domain   : " << domain << endl;       // Output: gmail.com
 
 
 		
@@ -32,9 +73,14 @@ int main() {
 	else {
 		std::cout << "Inactive" << std::endl;
 		/*	
-		
-		
-		
+		string email = "mbarek@gmail.com";
+		int index = email.find("@");  // Find the position of '@'
+
+		string userName = email.substr(0, index);      // Extract part before '@'
+		string domain = email.substr(index + 1);      // Extract part after '@'
+
+		cout << "userName : " << userName << endl;     // Output: mbarek
+		cout << "domain   : " << domain << endl;       // Output: gmail.com
 		string str = "MADAM";
 		string rev = "";
 
@@ -431,8 +477,6 @@ int main() {
 		
 		*/
 	}
-
-  
 
     return 0;
 }
