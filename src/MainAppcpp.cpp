@@ -84,6 +84,54 @@ int main() {
 	if (true) {
 		std::cout << "Active code" << std::endl;
 
+		int row = 5;
+
+		for (int i = 0; i < row; ++i) {
+			for (int j = 0; j < i; ++j) {
+				cout << "  ";
+			}
+
+			for (int k = 0; k < row - i; k++) {
+				cout << "* ";
+			}
+
+
+			cout << endl;
+		}
+
+
+
+		int A[] = { 4,6,27,15,31,22,30,29,8,16 };
+		int max = A[0];
+
+		int n = sizeof(A);  // 	Total bytes occupied by array
+		cout << "size of A : " << n << endl;
+
+
+		int size = sizeof(A[0]); // Size of one int element
+		cout << "size of A[0] : " << size << endl;	
+
+		int arrSize = n / size; //Number of elements in the array
+
+		for (int i = 0; i < arrSize; i++) {
+
+			if (A[i]> max) {
+				max = A[i];
+			}
+		}
+
+		cout << max << endl;
+
+
+
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+
+		//std::cout << "Inactive" << std::endl;
+		/*
+		
 		int x = 10, y;
 		y = ++x;   // Pre-increment
 		cout << y; // Output: 10
@@ -97,32 +145,25 @@ int main() {
 
 		 int a,b,c;
 
-    cout << "Enter 3 no.s" << endl;
-    cin>>a>>b>>c;
-        
-    if(a>b && a>c)
-    {
-        cout<<a<<endl;
-    }
-    else if(b>c)
-    {
-        cout<<b<<endl;
-    }
-    else
-    {
-        cout<<c<<endl;
-    }
+		cout << "Enter 3 no.s" << endl;
+		cin>>a>>b>>c;
 
-
+		if(a>b && a>c)
+		{
+			cout<<a<<endl;
+		}
+		else if(b>c)
+		{
+			cout<<b<<endl;
+		}
+		else
+		{
+			cout<<c<<endl;
+		}
 		//cout << "Min of (10, 5.5, 3.5): " << Min(10, 5.5, 3.5) << endl; // Mixed types
 		//cout << "Min of (12.5, 8.7, 3.2): " << Min(12.5, 8.7, 3.2) << endl; // All floats
 		//cout << "Min of (20, 15.5, 10.7): " << Min(20, 15.5, 10.7) << endl; // Mixed types
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-		//std::cout << "Inactive" << std::endl;
-		/*	
+
 		// 1. Min() function for 2 TEMPLATE types
 		template<typename  T>  // or template<class T>
 		T Min(T a , T b) {
