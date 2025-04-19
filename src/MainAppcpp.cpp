@@ -86,21 +86,53 @@ int main() {
 
 		int row = 5;
 
-		for (int i = 0; i < row; ++i) {
-			for (int j = 0; j < i; ++j) {
+		for (int i = 0; i < row ; ++i) {
+
+			for (int j = 0; j < row-i-1; ++j) {
 				cout << "  ";
 			}
 
-			for (int k = 0; k < row - i; k++) {
+			for (int k = 0; k <= i ; k++) {
 				cout << "* ";
 			}
-
-
 			cout << endl;
 		}
 
 
+		int rows = 5;
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < rows - i; ++j) {
+				cout <<"  ";
 
+			}
+
+			for (int k = 0; k <= i; ++k) {
+				cout <<"* ";
+			}
+	
+			cout << i <<" " << endl;
+		}
+
+		cout << "  " << endl;
+		
+		for (int i = 0; i < rows; ++i) {
+			for (int j = 0; j < i; ++j) {
+				//cout << "  ";
+			}
+			for (int k = 0; k < rows - i; ++k) {
+				cout << "* ";
+			}
+			cout << endl;
+		}
+
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+
+		//std::cout << "Inactive" << std::endl;
+		/*
+		
 		int A[] = { 4,6,27,15,31,22,30,29,8,16 };
 		int max = A[0];
 
@@ -122,16 +154,6 @@ int main() {
 
 		cout << max << endl;
 
-
-
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-
-		//std::cout << "Inactive" << std::endl;
-		/*
-		
 		int x = 10, y;
 		y = ++x;   // Pre-increment
 		cout << y; // Output: 10
