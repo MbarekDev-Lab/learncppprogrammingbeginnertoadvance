@@ -84,10 +84,28 @@ int main() {
 	if (true) {
 		std::cout << "Active code" << std::endl;
 
+		// Prime Checker:
+		int n, count = 0;
+		cout << "Enter a number: ";
+		cin >> n;
+		for (int i = 1; i <= n; i++) {
+			if (n % i == 0) {
+				count++;
+			}
+		}
+		if (count == 2)cout << "its a prime number " << endl;
+		else cout<<"its not a prim number" <<endl;
+
+
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+
+		//std::cout << "Inactive" << std::endl;
+		/*
 		int row = 5;
-
 		for (int i = 0; i < row ; ++i) {
-
 			for (int j = 0; j < row-i-1; ++j) {
 				cout << "  ";
 			}
@@ -98,23 +116,19 @@ int main() {
 			cout << endl;
 		}
 
-
 		int rows = 5;
 		for (int i = 0; i < rows; ++i) {
 			for (int j = 0; j < rows - i; ++j) {
 				cout <<"  ";
-
 			}
 
 			for (int k = 0; k <= i; ++k) {
 				cout <<"* ";
 			}
-	
 			cout << i <<" " << endl;
 		}
 
 		cout << "  " << endl;
-		
 		for (int i = 0; i < rows; ++i) {
 			for (int j = 0; j < i; ++j) {
 				//cout << "  ";
@@ -125,35 +139,24 @@ int main() {
 			cout << endl;
 		}
 
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-
-		//std::cout << "Inactive" << std::endl;
-		/*
-		
 		int A[] = { 4,6,27,15,31,22,30,29,8,16 };
 		int max = A[0];
 
 		int n = sizeof(A);  // 	Total bytes occupied by array
 		cout << "size of A : " << n << endl;
-
-
+		
 		int size = sizeof(A[0]); // Size of one int element
 		cout << "size of A[0] : " << size << endl;	
 
 		int arrSize = n / size; //Number of elements in the array
 
 		for (int i = 0; i < arrSize; i++) {
-
 			if (A[i]> max) {
 				max = A[i];
 			}
 		}
 
 		cout << max << endl;
-
 		int x = 10, y;
 		y = ++x;   // Pre-increment
 		cout << y; // Output: 10
