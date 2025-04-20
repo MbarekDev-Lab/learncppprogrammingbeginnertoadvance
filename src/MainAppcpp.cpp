@@ -136,20 +136,35 @@ int main() {
 	if (true) {
 		std::cout << "Active code" << std::endl;
 
-		int n ,r;
+		int sum = 0, r, n=153;
+		int m = n;
+
+		while (n > 0) {
+			int digits = n % 10;
+			sum += digits * digits * digits;
+			n = n / 10;
+		}
+		if (sum == m)
+			cout << "armstrong";
+		else
+			cout << "not armstrong";
+
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
+		/*
+		
+		int n , r,rev=0;
 		cin >> n;
-		while (n>0) {
+		while ( n > 0 ){
 			r = n % 10;
+			rev = rev * 10 + r;
 			n = n / 10;
 			cout << r << endl;
 		}
-		
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
+		cout << "reverse : " << rev << endl;
 
-		//std::cout << "Inactive" << std::endl;
-		/*
 		int n;
 		cout << "Enter a number: ";
 		cin >> n;
@@ -161,9 +176,9 @@ int main() {
 			if (n % i == 0) {
 				cout << i << " ";  // Print factor followed by a space
 			}
-		}
+		} 
 		cout << endl;  // To move to the next line after printing all factors
-
+		
 		// Calculate sum of first n natural numbers
 		int sum = 0;
 		for (int i = 1; i <= n; ++i) {
