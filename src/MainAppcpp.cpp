@@ -173,7 +173,21 @@ int main() {
 		Palindrome(121);
 		
 		//reverseNums(123);
+		int n, r,rev=0;
+		cout << "Enter a number: ";
+		cin >> n;
 
+		// Loop to print each digit of the number in reverse order
+		while (n != 0) {
+			r = n % 10;   // Extract the last digit
+			cout << r << endl;   // Print the last digit
+			n = n / 10;   // Remove the last digit
+			cout << n << endl;   // Print the remaining number
+			rev = rev *10+ r;
+		}
+		cout << "rev : " << rev << std::endl;
+
+		
 
 		std::cout << "\nend of the MainApp." << std::endl;
 	}else {
