@@ -131,11 +131,55 @@ void multiplicationTable(int n) {
 
 }
 
+
+void reverseNums(int n) {
+	int rev = 0;
+	int m = n;
+	int r;
+	while (n>0) {
+		r = n % 10;
+		rev = rev * 10 + r;
+		n = n / 10;
+	}
+	cout << "reverse : " << rev << endl;
+}
+
+//write a loop to find reverse of a number
+   //check it is a palindrome
+void Palindrome(int n) {
+	int rev = 0;
+	int r;
+	int m = n;// store the original number
+
+	while(n > 0) {
+		r = n % 10;
+		rev = rev * 10 + r;
+		n = n / 10;
+	}
+	if (rev ==m) {
+		cout << "palindrome" << endl;
+	}
+	else {
+		cout << "not palindrome" << endl;
+	}
+}
+
+
+
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (true) {
 		std::cout << "Active code" << std::endl;
+		Palindrome(121);
+		
+		//reverseNums(123);
 
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
+		/*
+	
 		int sum = 0, r, n=153;
 		int m = n;
 
@@ -149,12 +193,6 @@ int main() {
 		else
 			cout << "not armstrong";
 
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
-		
 		int n , r,rev=0;
 		cin >> n;
 		while ( n > 0 ){
