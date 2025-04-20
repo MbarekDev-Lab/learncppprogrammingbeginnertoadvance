@@ -77,14 +77,112 @@ auto Min(T1 a, T2 b, T3 c) -> typename std::common_type<T1, T2, T3>::type {
 		}.end());
 }
 
+long long factorial(int n) {
+	int rec = n - 1;
+	if (n == 0 || n ==  1) {
+		return 1; // Base case
+	}return n * factorial(rec); // Recursive case
+}
 
+void printFactorial(int n) {
+	for (int i = 1; i <= n; ++i) {
+		if (n % i == 0) {  // If i is a divisor of n
+			cout << i << " ";  // Print the factor followed by a space
+		}
+	}
+	cout << endl;  // Print a newline after the list of factors
+}
+
+
+void checkPerfectNumber(int n) {
+	int sum = 0;
+	// Sum of proper divisors (excluding n itself)
+	for (int i = 1; i < n; ++i) {
+		if (n % i == 0) {
+			sum += i;
+		}
+	}
+
+	if (sum == n) {
+		cout << "perfect";
+	}
+	else {
+		cout << "not perfect";
+	}
+}
+
+void primeChecker(int n) {
+	int count = 0;
+	for (int i = 1; i <= n; i++) {
+		if (n % i == 0) {
+			count++;
+		}
+	}
+	if (count == 2) cout << "its a prime number " << endl;
+	else cout << "its not a prim number" << endl;
+}
+
+void multiplicationTable(int n) {
+	cout << "Multiplication table of " << n << ":" << endl;
+
+	for (int i = 1; i <= 10; i++) {
+		cout << n << "X" << i << " " << i * n << endl;
+	}
+
+}
 
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (true) {
 		std::cout << "Active code" << std::endl;
 
-		// Prime Checker:
+		int n ,r;
+		cin >> n;
+		while (n>0) {
+			r = n % 10;
+			n = n / 10;
+			cout << r << endl;
+		}
+		
+		std::cout << "\nend of the MainApp." << std::endl;
+	}
+	else {
+
+		//std::cout << "Inactive" << std::endl;
+		/*
+		int n;
+		cout << "Enter a number: ";
+		cin >> n;
+		multiplicationTable(n);
+		checkPerfectNumber( n);
+		// Print factors of the number n
+		cout << "Factors of " << n << " are: ";
+		for (int i = 1; i <= n; ++i) {
+			if (n % i == 0) {
+				cout << i << " ";  // Print factor followed by a space
+			}
+		}
+		cout << endl;  // To move to the next line after printing all factors
+
+		// Calculate sum of first n natural numbers
+		int sum = 0;
+		for (int i = 1; i <= n; ++i) {
+			sum = sum + i;
+		}
+		cout << "Sum of first " << n << " natural numbers is: " << sum << endl;
+		long long factorial = 1, num= 5;
+		if (num < 0) {
+			cout << "Error! Factorial of a negative number doesn't exist." << endl;
+		} else {
+			for (int i = 1; i <= num; i++) {
+				factorial = factorial * i;
+			}
+			cout << "Factorial of " << num << " is: " << factorial << endl;
+		}
+		
+		cout << "sum : " << sum << std::endl;
+
+			// Prime Checker:
 		int n, count = 0;
 		cout << "Enter a number: ";
 		cin >> n;
@@ -96,14 +194,6 @@ int main() {
 		if (count == 2)cout << "its a prime number " << endl;
 		else cout<<"its not a prim number" <<endl;
 
-
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}
-	else {
-
-		//std::cout << "Inactive" << std::endl;
-		/*
 		int row = 5;
 		for (int i = 0; i < row ; ++i) {
 			for (int j = 0; j < row-i-1; ++j) {
