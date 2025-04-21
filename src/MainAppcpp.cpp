@@ -164,36 +164,67 @@ void Palindrome(int n) {
 	}
 }
 
-
+int reverseNumber(int num) {
+	int rev = 0;
+	while (num != 0 ) {
+		rev = rev * 10 + (num % 10);
+		num /= 10;
+	}
+	return rev;
+}
 
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (true) {
 		std::cout << "Active code" << std::endl;
-		Palindrome(121);
-		
-		//reverseNums(123);
-		int n, r,rev=0;
+
+		int num;
 		cout << "Enter a number: ";
-		cin >> n;
+		cin >> num;
+		int absNum = abs(num); // Get the absolute value of the number
 
-		// Loop to print each digit of the number in reverse order
-		while (n != 0) {
-			r = n % 10;   // Extract the last digit
-			cout << r << endl;   // Print the last digit
-			n = n / 10;   // Remove the last digit
-			cout << n << endl;   // Print the remaining number
-			rev = rev *10+ r;
+		/*
+		if (num < 0) {
+			cout << "Negative number áre not supported" << endl;
+			return 1;
 		}
-		cout << "rev : " << rev << std::endl;
+		*/
+		cout << "the absolute number is : " << absNum << endl;
+		int rev = reverseNumber(num);
+		cout << "the reversed number is : " << rev << endl;
+		/*
+		if (num == rev) {
+			cout << "the number is palindrome" << endl;
+		}
+		else {
+			cout << "the number is not palindrome" << endl;
+		}
+		*/
 
-		
+		if (absNum == rev) {               
+			cout << "Absolute number is a palindrome" << endl;
+		}
+		else {
+			cout << "Absolute number is not a palindrome" << endl;
+		}
 
 		std::cout << "\nend of the MainApp." << std::endl;
 	}else {
 		//std::cout << "Inactive" << std::endl;
 		/*
-	
+		int n, r,rev=0;
+		cout << "Enter a number: ";
+		cin >> n;
+		// Loop to print each digit of the number in reverse order
+		while (n != 0) {
+			r = n % 10;        // Extract the last digit
+			cout << r << endl; // Print the last digit
+			n = n / 10;        // Remove the last digit
+			cout << n << endl; // Print the remaining number
+			rev = rev *10+ r;
+		}
+		cout << "rev : " << rev << std::endl;
+
 		int sum = 0, r, n=153;
 		int m = n;
 
