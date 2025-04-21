@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <type_traits>
 #include <vector>
+#include <thread>
+#include <chrono>
 
 using namespace std;
 
@@ -177,26 +179,42 @@ int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (true) {
 		std::cout << "Active code" << std::endl;
-		//check if the number is palindrome
-		int num, n , digit, rev=0;
-		cout << "Enter a Number : ";
-		cin >> num;
-		n = num;
-		do {
-			digit = n % 10; 
-			rev = (rev * 10) + digit; 
-			n = n / 10;
-			cout << "digit : " << digit << endl;
-		} while (n  != 0);
-		cout << "rev num is : " << rev << endl;
-		if (num==rev) {
-			cout << "palindrome" << endl;
-		}else {
-			cout << "not palindrome" << endl;
+
+		using namespace std::chrono_literals;  // For "100ms" syntax
+		int frame = 0;
+		for (;;) {	
+
+			std::cout << "Game Frame: " << frame << std::endl;
+			std::this_thread::sleep_for(100ms);
+			frame++;
+
+			if (frame == 10) {  
+				std::cout << "Reached 10 frames. Exiting loop." << std::endl;
+				break;
+			}
 		}
 
-
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
 		/*
+		
+		//check if the number is palindrome
+		int n, num, digit, rev = 0;
+		cout << "Enter a positive number: ";
+		cin >> num;
+		n = num;
+		do
+		{
+			digit = num % 10;
+			rev = (rev * 10) + digit;
+			num = num / 10;
+		} while (num != 0);
+		cout << " The reverse of the number is: " << rev << endl;
+		if (n == rev)
+			cout << " The number is a palindrome";
+		else
+			cout << " The number is not a palindrome";
 		int absNum = abs(num); // Get the absolute value of the number
 
 		if (num < 0) {
@@ -220,14 +238,6 @@ int main() {
 		else {
 			cout << "Absolute number is not a palindrome" << endl;
 		}
-		*/
-
-	
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
 		int n, r,rev=0;
 		cout << "Enter a number: ";
 		cin >> n;
