@@ -163,7 +163,7 @@ void Palindrome(int n) {
 		cout << "not palindrome" << endl;
 	}
 }
-
+// Function to reverse a number
 int reverseNumber(int num) {
 	int rev = 0;
 	while (num != 0 ) {
@@ -177,36 +177,52 @@ int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (true) {
 		std::cout << "Active code" << std::endl;
-
-		int num;
-		cout << "Enter a number: ";
+		//check if the number is palindrome
+		int num, n , digit, rev=0;
+		cout << "Enter a Number : ";
 		cin >> num;
-		int absNum = abs(num); // Get the absolute value of the number
+		n = num;
+		do {
+			digit = n % 10; 
+			rev = (rev * 10) + digit; 
+			n = n / 10;
+			cout << "digit : " << digit << endl;
+		} while (n  != 0);
+		cout << "rev num is : " << rev << endl;
+		if (num==rev) {
+			cout << "palindrome" << endl;
+		}else {
+			cout << "not palindrome" << endl;
+		}
+
 
 		/*
+		int absNum = abs(num); // Get the absolute value of the number
+
 		if (num < 0) {
 			cout << "Negative number áre not supported" << endl;
 			return 1;
 		}
-		*/
+		
 		cout << "the absolute number is : " << absNum << endl;
 		int rev = reverseNumber(num);
 		cout << "the reversed number is : " << rev << endl;
-		/*
+	
 		if (num == rev) {
 			cout << "the number is palindrome" << endl;
 		}
 		else {
 			cout << "the number is not palindrome" << endl;
 		}
-		*/
-
 		if (absNum == rev) {               
 			cout << "Absolute number is a palindrome" << endl;
 		}
 		else {
 			cout << "Absolute number is not a palindrome" << endl;
 		}
+		*/
+
+	
 
 		std::cout << "\nend of the MainApp." << std::endl;
 	}else {
