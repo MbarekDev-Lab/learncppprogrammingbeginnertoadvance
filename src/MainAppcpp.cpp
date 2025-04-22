@@ -174,11 +174,37 @@ int reverseNumber(int num) {
 	}
 	return rev;
 }
+void greet(const char* name = "User") {
+	cout << "Hello, " << name << "!" << endl;
+}
+int calculate(int a, int b = 5, int c = 10) {
+	return a + b + c;
+}
+
 
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
-	if (true) {
+	if (1) {
 		std::cout << "Active code" << std::endl;
+		cout << calculate(1) << endl;          // Output: 16 (b=5, c=10)
+		cout << calculate(1, 2) << endl;       // Output: 13 (c=10)
+		cout << calculate(1, 2, 3) << endl;    // Output: 6
+
+		greet("Mbarek");
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
+		/*
+
+		//for (int i = 0, j = 10; i < 5 || j > 5; i++, j--) {
+		for (int i = 0, j = 10; i < 5 && j > 5; i++, j--) {
+			cout << "i = " << i << ", j = " << j << endl;
+		}
+		int i = 1, j = 0;
+		while (j < 10) {
+			j = j + i++;
+			cout << "j : " << j << endl;
+		}
 
 		using namespace std::chrono_literals;  // For "100ms" syntax
 		int frame = 0;
@@ -194,11 +220,6 @@ int main() {
 			}
 		}
 
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
-		
 		//check if the number is palindrome
 		int n, num, digit, rev = 0;
 		cout << "Enter a positive number: ";
