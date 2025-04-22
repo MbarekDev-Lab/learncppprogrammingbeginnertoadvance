@@ -180,12 +180,18 @@ void greet(const char* name = "User") {
 int calculate(int a, int b = 5, int c = 10) {
 	return a + b + c;
 }
-
+int fun()
+{
+	static int x = 10;   // static means this variable keeps its value between calls
+	return ++x;         // increment x and return it
+}
 
 int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (1) {
 		std::cout << "Active code" << std::endl;
+		cout << fun() + fun();  // calling fun() twice and summing the results
+
 		cout << calculate(1) << endl;          // Output: 16 (b=5, c=10)
 		cout << calculate(1, 2) << endl;       // Output: 13 (c=10)
 		cout << calculate(1, 2, 3) << endl;    // Output: 6
