@@ -8,6 +8,7 @@
 #include <fstream>
 #include "../includes/queueusingLinkedList.h"
 #include "../includes/ArraybasedQueue.h"
+#include "../includes/IO.h"
 
 using namespace std;
 
@@ -194,7 +195,27 @@ int main() {
 	if (1) {
 		std::cout << "Active code" << std::endl;
 
+		IO::FileHandler fileHandler;
+		// Writing to a file
+		fileHandler.writeToFile("example.txt", "Hello, World!");
 
+		// Reading from the file and displaying its content
+		std::string content = fileHandler.readFromFile("example.txt");
+		std::cout << "Content read from file:\n" << content << std::endl;
+
+		// Printing file content line by line
+		std::cout << "Printing file content line by line:\n";
+		fileHandler.printFileContent("example.txt");
+
+		// Appending to the file
+		fileHandler.appendToFile("example.txt", "Appending some text.");
+
+		// Displaying the updated content
+		std::cout << "Updated file content:\n";
+		fileHandler.printFileContent("example.txt");
+
+		/*
+		
 		ifstream file("example.txt");  // Create an input file stream
 		if (file.is_open()) {  // Check if the file was successfully opened
 			std::cout << "File is open and associated with the stream.\n";
@@ -204,11 +225,7 @@ int main() {
 		}
 
 		file.close();  // Close the file
-
-
-
-
-		/*
+		
 		ifstream file("example.txt", std::ios::binary);  // Open file in binary mode
 		if (!file) {
 			std::cerr << "Error opening file!" << std::endl;
