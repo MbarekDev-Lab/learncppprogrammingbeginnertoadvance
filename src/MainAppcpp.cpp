@@ -6,6 +6,7 @@
 #include <thread>
 #include <chrono>
 #include "../includes/queueusingLinkedList.h"
+#include "../includes/ArraybasedQueue.h"
 
 using namespace std;
 
@@ -192,6 +193,25 @@ int main() {
 	if (1) {
 		std::cout << "Active code" << std::endl;
 
+		Queue q(5);
+
+		q.enqueue(10);
+		q.enqueue(20);
+		q.enqueue(30);
+		q.display();
+
+		q.dequeue();
+		q.display();
+
+	
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
+		/*
+		
+		
+		//Queue using linked list
 		Queue q;
 		q.enqueue(10);
 		q.enqueue(20);
@@ -204,22 +224,14 @@ int main() {
 		q.dequeue();
 		q.dequeue();
 		q.dequeue();  // Attempt to dequeue from empty queue
-
-
-
-
+		
+		
 		cout << fun() + fun();  // calling fun() twice and summing the results
-
 		cout << calculate(1) << endl;          // Output: 16 (b=5, c=10)
 		cout << calculate(1, 2) << endl;       // Output: 13 (c=10)
 		cout << calculate(1, 2, 3) << endl;    // Output: 6
 
 		greet("Mbarek");
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
-
 		//for (int i = 0, j = 10; i < 5 || j > 5; i++, j--) {
 		for (int i = 0, j = 10; i < 5 && j > 5; i++, j--) {
 			cout << "i = " << i << ", j = " << j << endl;
