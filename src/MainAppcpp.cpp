@@ -196,6 +196,7 @@ int main() {
 		std::cout << "Active code" << std::endl;
 
 		IO::FileHandler fileHandler;
+
 		// Writing to a file
 		fileHandler.writeToFile("example.txt", "Hello, World!");
 
@@ -214,8 +215,12 @@ int main() {
 		std::cout << "Updated file content:\n";
 		fileHandler.printFileContent("example.txt");
 
+	
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
 		/*
-		
 		ifstream file("example.txt");  // Create an input file stream
 		if (file.is_open()) {  // Check if the file was successfully opened
 			std::cout << "File is open and associated with the stream.\n";
@@ -238,15 +243,6 @@ int main() {
 		}
 
 		file.close();
-
-		*/
-
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
-		
 		Queue q(5);
 
 		q.enqueue(10);
