@@ -5,6 +5,7 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include <fstream>
 #include "../includes/queueusingLinkedList.h"
 #include "../includes/ArraybasedQueue.h"
 
@@ -193,6 +194,26 @@ int main() {
 	if (1) {
 		std::cout << "Active code" << std::endl;
 
+		ifstream file("example.txt", std::ios::binary);  // Open file in binary mode
+		if (!file) {
+			std::cerr << "Error opening file!" << std::endl;
+			return 1;
+		}
+		file.seekg(-10, std::ios::end);
+		char ch;
+		while (file.get(ch)) {
+			std::cout << ch;
+		}
+
+		file.close();
+
+
+
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
+		/*
+		
 		Queue q(5);
 
 		q.enqueue(10);
@@ -203,13 +224,6 @@ int main() {
 		q.dequeue();
 		q.display();
 
-	
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
-		
 		
 		//Queue using linked list
 		Queue q;
