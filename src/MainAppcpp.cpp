@@ -194,6 +194,21 @@ int main() {
 	if (1) {
 		std::cout << "Active code" << std::endl;
 
+
+		ifstream file("example.txt");  // Create an input file stream
+		if (file.is_open()) {  // Check if the file was successfully opened
+			std::cout << "File is open and associated with the stream.\n";
+		}
+		else {
+			std::cout << "File is not open.\n";
+		}
+
+		file.close();  // Close the file
+
+
+
+
+		/*
 		ifstream file("example.txt", std::ios::binary);  // Open file in binary mode
 		if (!file) {
 			std::cerr << "Error opening file!" << std::endl;
@@ -207,6 +222,7 @@ int main() {
 
 		file.close();
 
+		*/
 
 
 		std::cout << "\nend of the MainApp." << std::endl;
