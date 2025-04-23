@@ -5,6 +5,7 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include "../includes/queueusingLinkedList.h"
 
 using namespace std;
 
@@ -190,6 +191,23 @@ int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (1) {
 		std::cout << "Active code" << std::endl;
+
+		Queue q;
+		q.enqueue(10);
+		q.enqueue(20);
+		q.enqueue(30);
+		q.display();
+
+		q.dequeue();
+		q.display();
+
+		q.dequeue();
+		q.dequeue();
+		q.dequeue();  // Attempt to dequeue from empty queue
+
+
+
+
 		cout << fun() + fun();  // calling fun() twice and summing the results
 
 		cout << calculate(1) << endl;          // Output: 16 (b=5, c=10)

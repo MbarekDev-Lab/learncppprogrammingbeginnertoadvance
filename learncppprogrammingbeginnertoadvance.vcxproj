@@ -21,6 +21,9 @@
   <ItemGroup>
     <ClCompile Include="src\MainAppcpp.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes\queueusingLinkedList.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
