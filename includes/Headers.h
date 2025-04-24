@@ -43,5 +43,28 @@ namespace TestClasses{
     };
 
 
+    class Animal {
+    public:
+        void eat() {
+            cout << "Eating..." << endl;
+        }
+    };
+
+    class Dog : public Animal {
+    public:
+        void bark() {
+            cout << "Barking..." << endl;
+        }
+    };
+
+    class Cat : public Animal {
+    public:
+        void meow() {
+            cout << "Meowing..." << endl;
+        }
+    };
+
+
+
 
 }
