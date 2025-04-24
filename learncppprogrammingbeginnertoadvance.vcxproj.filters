@@ -15,5 +15,6 @@
     <ClInclude Include="includes\queueusingLinkedList.h" />
     <ClInclude Include="includes\ArraybasedQueue.h" />
     <ClInclude Include="includes\IO.h" />
+    <ClInclude Include="includes\Headers.h" />
   </ItemGroup>
 </Project>

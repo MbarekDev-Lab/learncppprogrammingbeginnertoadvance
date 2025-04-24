@@ -9,9 +9,10 @@
 #include "../includes/queueusingLinkedList.h"
 //#include "../includes/ArraybasedQueue.h"
 #include "../includes/IO.h"
+#include "../includes/Headers.h"
 
 using namespace std;
-
+using namespace TestClasses;
 void printArray(const int* arr, int size) {
 	for (int i = 0; i < size; i++) {
 		cout << arr[i] << " ";
@@ -194,7 +195,17 @@ int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (1) {
 		std::cout << "Active code" << std::endl;
+		Derived d;
+		cout << d << endl;  
+		cout << "Derived object created" << endl;
+		D obj;
+		cout << obj.value << endl;  
 
+		std::cout << "\nend of the MainApp." << std::endl;
+	}else {
+		//std::cout << "Inactive" << std::endl;
+		/*
+		
 		IO::FileHandler fileHandler;
 
 		// Writing to a file
@@ -214,13 +225,7 @@ int main() {
 		// Displaying the updated content
 		std::cout << "Updated file content:\n";
 		fileHandler.printFileContent("example.txt");
-
-	
-
-		std::cout << "\nend of the MainApp." << std::endl;
-	}else {
-		//std::cout << "Inactive" << std::endl;
-		/*
+		
 		ifstream file("example.txt");  // Create an input file stream
 		if (file.is_open()) {  // Check if the file was successfully opened
 			std::cout << "File is open and associated with the stream.\n";

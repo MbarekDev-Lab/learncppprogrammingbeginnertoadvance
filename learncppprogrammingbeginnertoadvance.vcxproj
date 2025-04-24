@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes\ArraybasedQueue.h" />
+    <ClInclude Include="includes\Headers.h" />
     <ClInclude Include="includes\IO.h" />
     <ClInclude Include="includes\queueusingLinkedList.h" />
   </ItemGroup>
