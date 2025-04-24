@@ -1,13 +1,9 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 using namespace std;
 
 
 namespace TestClasses{
-
-#include <iostream>
-    using namespace std;
-
     class Base {
     public:
         Base() {
@@ -28,8 +24,6 @@ namespace TestClasses{
         }
     };
 
-
-
     class A {
     public:
         int value = 10;
@@ -43,26 +37,22 @@ namespace TestClasses{
     };
 
 
+  //  runtime polymorphism.
     class Animal {
     public:
-        void eat() {
-            cout << "Eating..." << endl;
+        virtual void speak() {
+            cout << "Animal speaks" << endl;
         }
     };
 
     class Dog : public Animal {
     public:
-        void bark() {
-            cout << "Barking..." << endl;
+        void speak() override {
+            cout << "Dog barks 🐶" << endl;
         }
     };
 
-    class Cat : public Animal {
-    public:
-        void meow() {
-            cout << "Meowing..." << endl;
-        }
-    };
+
 
 
 

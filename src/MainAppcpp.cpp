@@ -195,11 +195,12 @@ int main() {
     std::cout << "begining of the MainApp." << std::endl;
 	if (1) {
 		std::cout << "Active code" << std::endl;
-		Derived d;
-		cout << d << endl;  
-		cout << "Derived object created" << endl;
-		D obj;
-		cout << obj.value << endl;  
+		
+
+		Animal* pet = new Dog();
+		pet->speak(); 
+
+		delete pet;
 
 		std::cout << "\nend of the MainApp." << std::endl;
 	}else {
